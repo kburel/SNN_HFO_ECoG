@@ -22,11 +22,9 @@ from teili.models.builder.synapse_equation_builder import SynapseEquationBuilder
 #===============================================================================================================      
 # Paths
 #===============================================================================================================
-root_path = '/Users/karla/DataFiles/'
 #root_path = #specify data path
 new_data_path = root_path + 'ECoG_Data/data_python/'
 
-root_path_save = '/Users/karla/Documents/PHD/HFO/Results/ECoG/'
 #root_path_save = #specify save results path
 save_path_figures = root_path_save + 'Figures/'
 save_path_results = root_path_save + 'ArtifactRejection/HFOIdentificationResults/'
