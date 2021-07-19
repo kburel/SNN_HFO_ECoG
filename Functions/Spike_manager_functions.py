@@ -14,7 +14,7 @@ window and step size for computing the average activity.
 def concatenate_spikes(spikes_list):
 
     '''
-    Get spikes per channel in a dictionary and concatenate them in one ingle vector with 
+    Get spikes per channel in a dictionary and concatenate them in one single vector with 
     spike times and neuron ids.
     :param spikes_list (dict): dict where the key is the channel name and contains a vector
                                with spike times 
