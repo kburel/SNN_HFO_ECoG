@@ -5,7 +5,7 @@ import scipy as sc
 
 '''
 This set of functions consist of a function that wraps all the spikes from different channels
-into vector of spike times and neuron ID (similar to the vectors returned by DYNAPSE)
+into a vector of spike times and neuron ID (similar to the vectors returned by DYNAPSE)
 and a mean firing rate giving a vector of spiketimes and neuron ID with configurable
 window and step size for computing the average activity.
 
