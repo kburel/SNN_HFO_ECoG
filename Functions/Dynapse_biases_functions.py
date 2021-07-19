@@ -49,7 +49,7 @@ def get_mean_std_currents(mean_tau, std_tau):
     and give back the mean and standard deviation that need to be set in amperes. This when the DPI neuron
     and synapse equations are used.
     :param mean_tau (float): mean time constant [sec]
-    :param std_tau (float):  starndard deviation [sec]
+    :param std_tau (float):  standard deviation [sec]
     '''
 
     mean_current = getTauCurrent(mean_tau * 1e-3)
