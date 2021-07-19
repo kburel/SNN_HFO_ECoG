@@ -19,7 +19,7 @@ def getTau(I):
 def getTauCurrent(tau, vector = False):
 
     '''
-    Compute the current in Amperes necessary to get a desired time constant:
+    Compute the current in amperes necessary to get a desired time constant:
     tau : Time constant, must be given in [sec]
     C_p : DPI capacitance [F]
     U_t : Thermal voltage [V]
