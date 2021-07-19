@@ -5,10 +5,11 @@ description = "A Spiking Neural Network for finding HFOs in prerecorded ECoG"
 authors = ["Karla Burelo <karlaburelorodriguez@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.10"
+python = ">=3.7,<3.10"
 numpy = "^1.21.1"
 Brian2 = "^2.4.2"
 scipy = "^1.7.0"
+seaborn = "^0.11.1"
 
 [tool.poetry.dev-dependencies]
 
