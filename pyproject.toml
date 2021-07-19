@@ -2,7 +2,7 @@
 name = "snn_hfo_ecog"
 version = "0.1.0"
 description = "A Spiking Neural Network for finding HFOs in prerecorded ECoG"
-authors = ["Karla Burelo <karlaburelorodriguez@gmail.com>"]
+authors = ["Karla Burelo <kburel@ini.uzh.ch>"]
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.10"
