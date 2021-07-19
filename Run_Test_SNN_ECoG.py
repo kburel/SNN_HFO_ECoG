@@ -61,7 +61,7 @@ possible_weights_exc = [1000, 2000]
 # Network parameters: Time constants and weights distributions
 #==============================================================================
 # Up and down channels must have opposite effect on postsynaptic neuron 
-# (neurons in the hiddden layer). To get more homogeneity Up (Dn) channels excite (inhibit)
+# (neurons in the hidden layer). To get more homogeneity Up (Dn) channels excite (inhibit)
 # half of the hidden neurons and inhibit (excite) the other half.
 
 #====================================
