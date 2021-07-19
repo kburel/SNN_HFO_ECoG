@@ -57,7 +57,7 @@ def get_meanfiringrate_from_network_activity(time_stamps, neuron_ids, num_neuron
     :return mfr (array):            calculated mean firing rate in each specified time window
     '''
 
-    assert step_size <= window_size, "Window size is smaller than step size. Please assure: step_size<=window_size"
+    assert step_size <= window_size, 'Window size is smaller than step size. Please assure: step_size<=window_size'
 
     # to get same number of time steps for all trials indep of spiking behaviour
     num_timesteps = int(np.ceil(trial_duration / step_size))

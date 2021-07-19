@@ -201,7 +201,7 @@ for cp, current_patient in enumerate(list_patients):
         # Input - Hidden layer Synapses
         #==============================================================================
         builder_object2 = SynapseEquationBuilder.import_eq('Equations/DPISyn')
-        Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name="Input_Hidden_layer", verbose=False)
+        Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False)
 
         #Connect
         Input_Hidden_layer.connect()
