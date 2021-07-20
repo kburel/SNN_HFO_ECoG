@@ -6,12 +6,11 @@ import scipy.io as sio
 import seaborn as sb
 
 import random as rdm
-from stockwell import st
 
 # IMPORT FUNCTIONS
-from SNN_HFO_Ecog.Functions.Ecog_set_functions import *
-from SNN_HFO_Ecog.Functions.Dynapse_biases_functions import *
-from SNN_HFO_Ecog.Functions.HFO_detection_functions import *
+from SNN_HFO_ECoG.Functions.Ecog_set_functions import *
+from SNN_HFO_ECoG.Functions.Dynapse_biases_functions import *
+from SNN_HFO_ECoG.Functions.HFO_detection_functions import *
 
 # IMPORT  Teili functions
 from teili.tools.plotter2d import Plotter2d
