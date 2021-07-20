@@ -1,8 +1,8 @@
 import numpy as np
 import copy
 import random as rdm
-from SNN_HFO_Ecog.Functions.Preprocessing_functions import *
-from SNN_HFO_Ecog.Functions.Spike_manager_functions import *
+from SNN_HFO_ECoG.Functions.Preprocessing_functions import *
+from SNN_HFO_ECoG.Functions.Spike_manager_functions import *
 
 
 def pre_process_data(raw_signal, time_vector, sampling_frequency, interpfact, refractory, FR_scaling_factor):

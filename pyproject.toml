@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "snn_hfo_ecog"
+version = "0.1.0"
+description = "A Spiking Neural Network for finding HFOs in prerecorded ECoG"
+authors = ["Karla Burelo <kburel@ini.uzh.ch>"]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.10"
+numpy = "^1.21.1"
+Brian2 = "^2.4.2"
+scipy = "^1.7.0"
+seaborn = "^0.11.1"
+teili = { git="https://gitlab.com/neuroinf/teili.git", branch="dev" }
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

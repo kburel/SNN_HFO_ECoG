@@ -6,12 +6,11 @@ import scipy.io as sio
 import seaborn as sb
 
 import random as rdm
-from stockwell import st
 
 # IMPORT FUNCTIONS
-from SNN_HFO_Ecog.Functions.Ecog_set_functions import *
-from SNN_HFO_Ecog.Functions.Dynapse_biases_functions import *
-from SNN_HFO_Ecog.Functions.HFO_detection_functions import *
+from SNN_HFO_ECoG.Functions.Ecog_set_functions import *
+from SNN_HFO_ECoG.Functions.Dynapse_biases_functions import *
+from SNN_HFO_ECoG.Functions.HFO_detection_functions import *
 
 # IMPORT  Teili functions
 from teili.tools.plotter2d import Plotter2d
@@ -60,9 +59,9 @@ max_subtraction_time_constant = 1
 possible_weights_exc = [1000, 2000]
 # ==============================================================================
 # Network parameters: Time constants and weights distributions
-# ==============================================================================
-# Up and down channels must have opposite effect on postsynaptic neuron
-# (neurons in the hiddden layer). To get more homogeneity Up (Dn) channels excite (inhibit)
+#==============================================================================
+# Up and down channels must have opposite effect on postsynaptic neuron 
+# (neurons in the hidden layer). To get more homogeneity Up (Dn) channels excite (inhibit)
 # half of the hidden neurons and inhibit (excite) the other half.
 
 # ====================================
@@ -211,8 +210,7 @@ for cp, current_patient in enumerate(list_patients):
         # Input - Hidden layer Synapses
         # ==============================================================================
         builder_object2 = SynapseEquationBuilder.import_eq('Equations/DPISyn')
-        Input_Hidden_layer = Connections(
-            Input, Hidden_layer, equation_builder=builder_object2, name="Input_Hidden_layer", verbose=False)
+        Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False)
 
         # Connect
         Input_Hidden_layer.connect()
