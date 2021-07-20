@@ -19,7 +19,7 @@ def getTau(I):
 def getTauCurrent(tau, vector = False):
 
     '''
-    Compute the current in Amperes necessary to get a desired time constant:
+    Compute the current in amperes necessary to get a desired time constant:
     tau : Time constant, must be given in [sec]
     C_p : DPI capacitance [F]
     U_t : Thermal voltage [V]
@@ -49,7 +49,7 @@ def get_mean_std_currents(mean_tau, std_tau):
     and give back the mean and standard deviation that need to be set in amperes. This when the DPI neuron
     and synapse equations are used.
     :param mean_tau (float): mean time constant [sec]
-    :param std_tau (float):  starndard deviation [sec]
+    :param std_tau (float):  standard deviation [sec]
     '''
 
     mean_current = getTauCurrent(mean_tau * 1e-3)
@@ -61,11 +61,11 @@ def get_mean_std_currents(mean_tau, std_tau):
 
 def updateCurrent(index_coarse,fine):
 
-    """
+    '''
     Convert caer bias I_TAU into current value:
     index_coarse: coarse value in range(8)
     fine: fine value in range(255)
-    """   
+    '''   
     coarse = ['24u', '3.2u', '0.4u', '50n', '6.5n', '820p', '105p', '15p']
     unit = coarse[index_coarse]
     maxCurrent = float(unit.split(unit[-1])[0])

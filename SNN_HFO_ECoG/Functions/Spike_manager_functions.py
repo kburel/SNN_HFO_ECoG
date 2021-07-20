@@ -5,8 +5,8 @@ import scipy as sc
 
 '''
 This set of functions consist of a function that wraps all the spikes from different channels
-into vector of spike times and neuron ID (similar to the vectors returned by DYNAPSE)
-and a mean firing rate giving a vector of spiketimes and neuron ID with configurable
+into a vector of spike times and neuron ID (similar to the vectors returned by DYNAPSE)
+and a mean firing rate giving a vector of spike times and neuron ID with configurable
 window and step size for computing the average activity.
 
 '''
@@ -14,7 +14,7 @@ window and step size for computing the average activity.
 def concatenate_spikes(spikes_list):
 
     '''
-    Get spikes per channel in a dictionary and concatenate them in one ingle vector with 
+    Get spikes per channel in a dictionary and concatenate them in one single vector with 
     spike times and neuron ids.
     :param spikes_list (dict): dict where the key is the channel name and contains a vector
                                with spike times 
@@ -57,7 +57,7 @@ def get_meanfiringrate_from_network_activity(time_stamps, neuron_ids, num_neuron
     :return mfr (array):            calculated mean firing rate in each specified time window
     '''
 
-    assert step_size <= window_size, "Window size is smaller than step size. Please assure: step_size<=window_size"
+    assert step_size <= window_size, 'Window size is smaller than step size. Please assure: step_size<=window_size'
 
     # to get same number of time steps for all trials indep of spiking behaviour
     num_timesteps = int(np.ceil(trial_duration / step_size))
