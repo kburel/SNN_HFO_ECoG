@@ -191,7 +191,8 @@ for cp, current_patient in enumerate(list_patients):
         #==============================================================================
         # Hidden layer
         #==============================================================================
-        builder_object1 = NeuronEquationBuilder.import_eq('Equations/DPI_bioplas', num_inputs=1)
+        equation_path = os.path.join('SNN_HFO_ECoG', 'Equations')
+        builder_object1 = NeuronEquationBuilder.import_eq(os.path.join(equation_path, 'DPI_bioplas'), num_inputs=1)
         Hidden_layer = Neurons(Hidden_neurons, equation_builder = builder_object1, name = 'Hidden_layer') 
         Hidden_layer.refP = refractory * second
         Hidden_layer.Itau = 3.5e-12 * amp #15.3 ms
@@ -199,7 +200,7 @@ for cp, current_patient in enumerate(list_patients):
         #==============================================================================
         # Input - Hidden layer Synapses
         #==============================================================================
-        builder_object2 = SynapseEquationBuilder.import_eq('Equations/DPISyn')
+        builder_object2 = SynapseEquationBuilder.import_eq(os.path.join(equation_path, 'DPISyn'))
         Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False)
 
         #Connect
