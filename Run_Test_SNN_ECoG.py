@@ -21,10 +21,10 @@ from teili.models.builder.synapse_equation_builder import SynapseEquationBuilder
 # ===============================================================================================================
 # Paths
 # ===============================================================================================================
-# root_path = #specify data path
+root_path = './'
 new_data_path = root_path + 'ECoG_Data/data_python/'
 
-# root_path_save = #specify save results path
+root_path_save = './'
 save_path_figures = root_path_save + 'Figures/'
 save_path_results = root_path_save + 'ArtifactRejection/HFOIdentificationResults/'
 
@@ -198,18 +198,17 @@ for cp, current_patient in enumerate(list_patients):
 
         # ==============================================================================
         # Hidden layer
-        # ==============================================================================
-        builder_object1 = NeuronEquationBuilder.import_eq(
-            'Equations/DPI_bioplas', num_inputs=1)
-        Hidden_layer = Neurons(
-            Hidden_neurons, equation_builder=builder_object1, name='Hidden_layer')
+        #==============================================================================
+        equation_path = os.path.join('SNN_HFO_ECoG', 'Equations')
+        builder_object1 = NeuronEquationBuilder.import_eq(os.path.join(equation_path, 'Neuron_model'), num_inputs=1)
+        Hidden_layer = Neurons(Hidden_neurons, equation_builder = builder_object1, name = 'Hidden_layer') 
         Hidden_layer.refP = refractory * second
         Hidden_layer.Itau = 3.5e-12 * amp  # 15.3 ms
 
         # ==============================================================================
         # Input - Hidden layer Synapses
-        # ==============================================================================
-        builder_object2 = SynapseEquationBuilder.import_eq('Equations/DPISyn')
+        #==============================================================================
+        builder_object2 = SynapseEquationBuilder.import_eq(os.path.join(equation_path, 'Synapse_model'))
         Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False)
 
         # Connect
