@@ -21,7 +21,8 @@ from teili.models.builder.synapse_equation_builder import SynapseEquationBuilder
 # ===============================================================================================================
 # Paths
 # ===============================================================================================================
-root_path = './'
+#root_path = './'
+root_path = '/Users/karla/DataFiles/'
 new_data_path = root_path + 'ECoG_Data/data_python/'
 
 root_path_save = './'
@@ -201,7 +202,7 @@ for cp, current_patient in enumerate(list_patients):
         #==============================================================================
         equation_path = os.path.join('SNN_HFO_ECoG', 'Equations')
         builder_object1 = NeuronEquationBuilder.import_eq(os.path.join(equation_path, 'Neuron_model'), num_inputs=1)
-        Hidden_layer = Neurons(Hidden_neurons, equation_builder = builder_object1, name = 'Hidden_layer') 
+        Hidden_layer = Neurons(Hidden_neurons, equation_builder = builder_object1, name = 'Hidden_layer', dt=100*us) 
         Hidden_layer.refP = refractory * second
         Hidden_layer.Itau = 3.5e-12 * amp  # 15.3 ms
 
@@ -209,7 +210,7 @@ for cp, current_patient in enumerate(list_patients):
         # Input - Hidden layer Synapses
         #==============================================================================
         builder_object2 = SynapseEquationBuilder.import_eq(os.path.join(equation_path, 'Synapse_model'))
-        Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False)
+        Input_Hidden_layer = Connections(Input, Hidden_layer, equation_builder = builder_object2, name='Input_Hidden_layer', verbose=False, dt=100*us)
 
         # Connect
         Input_Hidden_layer.connect()
@@ -232,7 +233,7 @@ for cp, current_patient in enumerate(list_patients):
         # Running simulation
         # ==============================================================================
         duration = np.max(Ecog_signal['time']) + extra_simulation_time
-        #duration = 10
+        #duration = 0.01
         print('Running SNN for Patient %s channel %s ' %
               (current_patient, current_channel))
         print('Signal time is ', duration, ' seconds')
