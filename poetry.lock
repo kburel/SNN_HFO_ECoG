@@ -339,7 +339,7 @@ resolved_reference = "25db2b9d3a0b6ed6f6a181aaae418453aadd1818"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<3.10"
-content-hash = "f21ace521a3f164fda6ef3bdaf0eec0526afcdf70c850ccd3a981bc4575a46bb"
+content-hash = "4945ec195ebc320ec2579627a3383cb436029e9490ce385b240b4c2e0d6d109a"
 
 [metadata.files]
 brian2 = [
