@@ -138,3 +138,4 @@ dmypy.json
 cython_debug/
 
 extract_data_ECoG.py
+.DS_Store
