@@ -23,7 +23,7 @@ from teili.models.builder.synapse_equation_builder import SynapseEquationBuilder
 # ===============================================================================================================
 #root_path = './'
 root_path = '/Users/karla/DataFiles/'
-new_data_path = root_path + 'ECoG_Data/data_python/'
+new_data_path = root_path + 'ECoG_Data/data_mat_raw/'
 
 root_path_save = './'
 save_path_figures = root_path_save + 'Figures/'
@@ -120,7 +120,7 @@ sampling_frequency = 2000
 FR_scaling_factor = 0.5
 interpfact = 35000
 refractory = 3e-4
-recording_type = 'pre'
+recording_type = 'Pre'
 
 # ========================================================================================
 # Loop over Patients
@@ -132,12 +132,8 @@ for cp, current_patient in enumerate(list_patients):
     Data = sio.loadmat(new_data_path +
                        'P%i/Data_%s_Patient_%02d.mat' % (current_patient, recording_type, current_patient))
 
-    if recording_type == 'pre':
-        recording_prefix = 'Pre'
-    elif recording_type == 'post':
-        recording_prefix = 'Post'
 
-    number_of_channels = Data['%s_Ecog_signal' % recording_prefix].shape[0]
+    number_of_channels = Data['chb'].shape[0]
 
     # Create dictionary to save results
     Test_Results = {}
@@ -156,11 +152,10 @@ for cp, current_patient in enumerate(list_patients):
     # ========================================================================================
     for current_channel in range(number_of_channels):
 
-        Ecog_signal_raw = Data['%s_Ecog_signal' %
-                               recording_prefix][current_channel, :]
-        HFO_mark = Data['pattern_%s' % recording_type][current_channel]
-        time_vector = Data['time_%s' % recording_type][0]
-        label = Data['labels_%s' % recording_type][0][current_channel][0]
+        Ecog_signal_raw = Data['chb'][current_channel, :]
+        HFO_mark = Data['pattern'][current_channel]
+        time_vector = Data['t'][0]
+        label = Data['labels'][0][current_channel][0]
 
         Ecog_signal, Ecog_spikes = pre_process_data(raw_signal=Ecog_signal_raw,
                                                     time_vector=time_vector,
@@ -174,7 +169,7 @@ for cp, current_patient in enumerate(list_patients):
 
         Test_Results['Info']['Recording_duration'] = np.array(
             [time_vector[-1]])
-        Test_Results['Info']['labels'] = Data['labels_%s' % recording_type][0]
+        Test_Results['Info']['labels'] = Data['labels'][0]
 
         # ===============================================================================================================
         # Configure spikes for network input
@@ -233,7 +228,7 @@ for cp, current_patient in enumerate(list_patients):
         # Running simulation
         # ==============================================================================
         duration = np.max(Ecog_signal['time']) + extra_simulation_time
-        #duration = 0.01
+        duration = 0.01
         print('Running SNN for Patient %s channel %s ' %
               (current_patient, current_channel))
         print('Signal time is ', duration, ' seconds')
