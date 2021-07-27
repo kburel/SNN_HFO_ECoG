@@ -1,7 +1,7 @@
 # SNN_HFO_ECoG
 A Spiking Neural Network for finding HFOs in prerecorded ECoG
 
-**⚠️ This package has been superseeded by [kburel/SNN_HFO_iEEG](https://github.com/kburel/SNN_HFO_iEEG). Use the new package instead, it can do everything this could and more!**
+**⚠️ This package has been superseeded by [kburel/snn-hfo-detection](https://github.com/kburel/snn-hfo-detection). Use the new package instead, it can do everything this could and more!**
 
 ---
 
