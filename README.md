@@ -1,8 +1,13 @@
 # SNN_HFO_ECoG
 A Spiking Neural Network for finding HFOs in prerecorded ECoG
 
-## Instructions
-This project uses [poetry](https://python-poetry.org/) to manage its dependencies. You can download it via
+**⚠️ This package has been superseeded by [kburel/snn-hfo-detection](https://github.com/kburel/snn-hfo-detection). Use the new package instead, it can do everything this could and more!**
+
+---
+
+## Old Instructions
+For archival purposes, you can still run this old package if you really need to.
+The project uses [poetry](https://python-poetry.org/) to manage its dependencies. You can download it via
 ```bash
 pip install --user poetry
 ```
